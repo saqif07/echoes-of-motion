@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Echoes of Motion</title>
+    
+    <!-- Load p5.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.js"></script>
+    
+    <!-- Link to styles.css -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,6 +16,7 @@
         <h1>Echoes of Motion</h1>
         <p>Customize your experience below:</p>
         
+        <!-- Controls Section -->
         <div id="controls">
             <label for="colorPicker">Select Color:</label>
             <input type="color" id="colorPicker">
@@ -25,9 +30,8 @@
             <button id="clearCanvas">Clear Canvas</button>
         </div>
 
-        <div id="canvasContainer">
-            <!-- p5.js Canvas will be generated here -->
-        </div>
+        <!-- p5.js Canvas -->
+        <div id="canvasContainer"></div>
 
         <!-- Audio Section -->
         <audio id="ambientAudio" src="ambient.mp3" loop></audio>
@@ -35,6 +39,7 @@
 
     </div>
 
-    <script src="script.js" defer></script>
+    <!-- Load script.js (Your main project script) -->
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,5 +1,4 @@
 
-console.log("JavaScript is connected!");
 let angle = 0;
 let symmetry = 8; 
 let speedSlider, complexitySlider, colorPicker;
@@ -24,8 +23,8 @@ function draw() {
     translate(width / 2, height / 2);
     rotate(angle);
 
-    let speed = speedSlider.value() * 0.01;
-    angle += speed;
+    let animationSpeed = speedSlider.value() * 0.01;
+angle += animationSpeed;
 
     let complexity = complexitySlider.value();
     background(colorPicker.value());

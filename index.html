@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echoes of Motion</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Echoes of Motion</h1>
+        <p>Customize your experience below:</p>
+        
+        <div id="controls">
+            <label for="colorPicker">Select Color:</label>
+            <input type="color" id="colorPicker">
+
+            <label for="speedSlider">Animation Speed:</label>
+            <input type="range" id="speedSlider" min="1" max="10">
+
+            <label for="complexitySlider">Complexity:</label>
+            <input type="range" id="complexitySlider" min="4" max="12">
+
+            <button id="clearCanvas">Clear Canvas</button>
+        </div>
+
+        <div id="canvasContainer">
+            <!-- p5.js Canvas will be generated here -->
+        </div>
+
+        <!-- Audio Section -->
+        <audio id="ambientAudio" src="ofeliasdream.mp3" loop></audio>
+        <input type="range" id="volumeSlider" min="0" max="100">
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

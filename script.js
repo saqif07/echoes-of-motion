@@ -1,3 +1,5 @@
+
+console.log("JavaScript is connected!");
 let angle = 0;
 let symmetry = 8; 
 let speedSlider, complexitySlider, colorPicker;

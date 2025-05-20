@@ -59,8 +59,12 @@ function draw() {
 }
 
 function mouseDragged() {
+    let gridSize = 20; // Snap movement to a grid
+    let x = round((mouseX - width / 2) / gridSize) * gridSize;
+    let y = round((mouseY - height / 2) / gridSize) * gridSize;
     let shapeSize = map(abs(mouseX - pmouseX), 0, width, 10, 50);
-    shapes.push(new MovingShape(mouseX - width / 2, mouseY - height / 2, shapeSize));
+
+    shapes.push(new MovingShape(x, y, shapeSize));
 }
 
 class MovingShape {

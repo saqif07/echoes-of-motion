@@ -3,6 +3,11 @@ let angle = 0;
 let symmetry = 8; 
 let speedSlider, complexitySlider, colorPicker;
 let shapes = [];
+let audio = document.getElementById("ambientAudio");
+
+window.addEventListener("click", () => {
+    audio.play();
+});
 
 function setup() {
     let canvas = createCanvas(600, 600);

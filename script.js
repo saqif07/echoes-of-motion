@@ -38,68 +38,59 @@ function draw() {
     let complexity = complexitySlider.value();
     background(colorPicker.value());
 
-    // Dynamic border color cycling effect
     let borderColors = [color(255, 100, 100), color(100, 255, 100), color(100, 100, 255)];  
     let currentColor = borderColors[int(frameCount / 20) % borderColors.length];
 
-    stroke(currentColor); // Changes the border color dynamically
+    stroke(currentColor);
     noFill();
 
     for (let i = 0; i < complexity; i++) {
         push();
         rotate((PI * 2 / complexity) * i);
-        ellipse(0, 0, 100, 100); // Simple animated shape for visualization
+        drawPattern();
         pop();
     }
-}
-for (let s of shapes) {
-    s.display();
-}
-function mouseDragged() { let gridSize = 20; // Snap movement to a grid let x = round((mouseX - width / 2) / gridSize) * gridSize; let y = round((mouseY - height / 2) / gridSize) * gridSize; let shapeSize = map(abs(mouseX - pmouseX), 0, width, 10, 50);
-shapes.push(new MovingShape(x, y, shapeSize));
 
-}
-class MovingShape { constructor(x, y, size) { this.x = x; this.y = y; this.size = size; }
-display() {
-    fill(255, 150);
-    ellipse(this.x, this.y, this.size);
+    // ✅ Correct placement of shape loop
+    for (let s of shapes) {
+        s.display();
+    }
 }
 
-display() {
-    fill(255, 150);
-    ellipse(this.x, this.y, this.size);
-}
-}
-function drawPattern() { let size = map(sin(frameCount * 0.02), -1, 1, 50, 200);
-switch (shapePicker.value) {
-    case "circle":
-        ellipse(0, size, size, size);
-        break;
-    case "square":
-        rect(-size / 2, size, size, size);
-        break;
-    case "triangle":
-        triangle(-size / 2, size, size / 2, size, 0, -size);
-        break;
+function mouseDragged() { 
+    let gridSize = 20; // Snap movement to a grid
+    let x = round((mouseX - width / 2) / gridSize) * gridSize;
+    let y = round((mouseY - height / 2) / gridSize) * gridSize;
+    let shapeSize = map(abs(mouseX - pmouseX), 0, width, 10, 50);
+
+    shapes.push(new MovingShape(x, y, shapeSize));
 }
 
-switch (shapePicker.value) {
-    case "circle":
-        ellipse(0, size, size, size);
-        break;
-    case "square":
-        rect(-size / 2, size, size, size);
-        break;
-    case "triangle":
-        triangle(-size / 2, size, size / 2, size, 0, -size);
-        break;
+class MovingShape {
+    constructor(x, y, size) {
+        this.x = x;
+        this.y = y;
+        this.size = size;
+    }
+
+    display() {
+        fill(255, 150);
+        ellipse(this.x, this.y, this.size);
+    }
 }
 
-
-
-
-
-
-
-
-
+function drawPattern() { 
+    let size = map(sin(frameCount * 0.02), -1, 1, 50, 200);
+    
+    switch (shapePicker.value) {
+        case "circle":
+            ellipse(0, size, size, size);
+            break;
+        case "square":
+            rect(-size / 2, size, size, size);
+            break;
+        case "triangle":
+            triangle(-size / 2, size, size / 2, size, 0, -size);
+            break;
+    }
+}

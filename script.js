@@ -1,7 +1,6 @@
 let angle = 0;
 let symmetry = 8; 
-let speedSlider, complexitySlider, colorPicker, shapePicker;
-let shapes = [];
+let speedSlider, complexitySlider, colorPicker;
 let audio;
 
 function setup() {
@@ -11,14 +10,8 @@ function setup() {
     colorPicker = select("#colorPicker");
     speedSlider = select("#speedSlider");
     complexitySlider = select("#complexitySlider");
-    shapePicker = document.getElementById("shapePicker");
 
     audio = document.getElementById("ambientAudio");
-
-    select("#clearCanvas").mousePressed(() => {
-        shapes = [];
-        background(colorPicker.value());
-    });
 
     document.addEventListener("click", () => {
         if (audio) {
@@ -53,49 +46,6 @@ function draw() {
     for (let i = 0; i < complexity; i++) {
         push();
         rotate((PI * 2 / complexity) * i);
-        drawPattern();
         pop();
-    }
-}
-
-    for (let s of shapes) {
-        s.display();
-    }
-
-function mouseDragged() {
-    let gridSize = 20; // Snap movement to a grid
-    let x = round((mouseX - width / 2) / gridSize) * gridSize;
-    let y = round((mouseY - height / 2) / gridSize) * gridSize;
-    let shapeSize = map(abs(mouseX - pmouseX), 0, width, 10, 50);
-
-    shapes.push(new MovingShape(x, y, shapeSize));
-}
-
-class MovingShape {
-    constructor(x, y, size) {
-        this.x = x;
-        this.y = y;
-        this.size = size;
-    }
-
-    display() {
-        fill(255, 150);
-        ellipse(this.x, this.y, this.size);
-    }
-}
-
-function drawPattern() {
-    let size = map(sin(frameCount * 0.02), -1, 1, 50, 200);
-    
-    switch (shapePicker.value) {
-        case "circle":
-            ellipse(0, size, size, size);
-            break;
-        case "square":
-            rect(-size / 2, size, size, size);
-            break;
-        case "triangle":
-            triangle(-size / 2, size, size / 2, size, 0, -size);
-            break;
     }
 }

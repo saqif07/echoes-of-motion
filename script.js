@@ -58,7 +58,7 @@ function draw() {
         pop();
     }
 
-    // ✅ Correct placement of shape loop
+    // shape loop
     for (let s of shapes) {
         s.display();
     }

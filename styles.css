@@ -24,8 +24,11 @@ body {
 h1 {
     font-family: 'Orbitron', sans-serif;
     text-transform: uppercase;
-    color: #193F3F; /* Deep cosmic green */
-    text-shadow: 0px 0px 10px rgba(25, 63, 63, 0.8);
+    font-size: 42px; /* Increased size */
+    color: #ffffff; /* Bright white */
+    text-shadow: 0px 0px 20px rgba(25, 63, 63, 0.9), /* Deep glow */
+                 0px 0px 40px rgba(25, 63, 63, 0.5); /* Outer glow */
+    letter-spacing: 3px;
     opacity: 0;
     animation: fadeIn 2s forwards;
 }

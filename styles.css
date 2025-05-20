@@ -124,6 +124,21 @@ button:hover {
     transform: scale(1.05); /* Slight zoom on hover */
 }
 
+#musicCredit {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    margin-top: 5px;
+}
+#musicCredit a {
+    color: #FFD700; /* Soft gold for emphasis */
+    text-decoration: none;
+}
+#musicCredit a:hover {
+    text-decoration: underline;
+}
+
+
 /* Audio Player */
 #audioControls {
     margin-top: 20px;

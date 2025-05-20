@@ -43,7 +43,11 @@ function draw() {
     let complexity = complexitySlider.value();
     background(colorPicker.value());
 
-    stroke(255);
+    // Dynamic border color cycling effect
+    let borderColors = [color(255, 100, 100), color(100, 255, 100), color(100, 100, 255)];  
+    let currentColor = borderColors[int(frameCount / 20) % borderColors.length];
+
+    stroke(currentColor); // Changes the border color dynamically
     noFill();
 
     for (let i = 0; i < complexity; i++) {
@@ -52,6 +56,7 @@ function draw() {
         drawPattern();
         pop();
     }
+}
 
     for (let s of shapes) {
         s.display();

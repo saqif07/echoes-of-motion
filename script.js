@@ -3,11 +3,21 @@ let angle = 0;
 let symmetry = 8; 
 let speedSlider, complexitySlider, colorPicker;
 let shapes = [];
+let audio = document.getElementById("ambientAudio");
 
-
-window.addEventListener("click", () => {
-    audio.play();
+document.addEventListener("click", () => {
+    if (audio) {
+        audio.play().catch(error => console.error("Playback error:", error));
+    } else {
+        console.error("Ambient audio file not found!");
+    }
 });
+document.getElementById("playAudio").addEventListener("click", () => {
+    if (audio) {
+        audio.play();
+    }
+});
+
 
 function setup() {
     let canvas = createCanvas(600, 600);
@@ -73,17 +83,14 @@ function drawPattern() {
 }// Audio integration
 let audio = document.getElementById("ambientAudio");
 
-// Play sound when the page loads
-window.onload = () => {
-    audio.play();
+
 };
 
 // Adjust volume with slider
 document.getElementById("volumeSlider").addEventListener("input", (event) => {
     audio.volume = event.target.value / 100;
 
-    document.getElementById("playAudio").addEventListener("click", () => {
-    audio.play();
+
 });
 
 });

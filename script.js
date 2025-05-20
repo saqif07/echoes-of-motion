@@ -37,7 +37,7 @@ function draw() {
     translate(width / 2, height / 2);
     rotate(angle);
 
-    let animationSpeed = speedSlider.value() * 0.01;
+    let animationSpeed = speedSlider.value() * 0.005;
     angle += animationSpeed;
 
     let complexity = complexitySlider.value();

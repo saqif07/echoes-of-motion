@@ -17,4 +17,13 @@ body {
 
 input[type="color"], input[type="range"], button {
     margin: 10px;
+
+
+    #description {
+    font-size: 16px;
+    color: white; /* Change to another color if needed */
+    text-align: center;
+    padding: 10px;
+}
+
 }

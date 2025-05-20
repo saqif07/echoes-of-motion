@@ -17,15 +17,15 @@ body {
     width: 80%;
     max-width: 800px;
     margin: 20px auto;
-    box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5); /* Glowing effect */
+    box-shadow: 0px 0px 20px rgba(50, 205, 50, 0.5); /* Glowing effect */
 }
 
 /* Title with Subtle Animation */
 h1 {
     font-family: 'Orbitron', sans-serif;
     text-transform: uppercase;
-    color: cyan; /* Futuristic glow */
-    text-shadow: 0px 0px 10px rgba(0, 255, 255, 0.8);
+    color: #32cd32; /* Vibrant green */
+    text-shadow: 0px 0px 10px rgba(50, 205, 50, 0.8);
     opacity: 0;
     animation: fadeIn 2s forwards;
 }
@@ -58,8 +58,8 @@ h1 {
 /* Controls Section with Glowing Borders */
 #controls {
     background: rgba(255, 255, 255, 0.1);
-    border: 2px solid cyan;
-    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.5); /* Glow effect */
+    border: 2px solid #32cd32;
+    box-shadow: 0px 0px 10px rgba(50, 205, 50, 0.5); /* Glow effect */
     border-radius: 10px;
     padding: 15px;
     display: inline-block;
@@ -89,14 +89,14 @@ input, select, button {
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    border: 2px solid cyan;
-    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.8); /* Neon glow effect */
+    border: 2px solid #32cd32;
+    box-shadow: 0px 0px 15px rgba(50, 205, 50, 0.8); /* Neon glow effect */
     border-radius: 10px;
 }
 
 /* Buttons */
 button {
-    background: cyan;
+    background: #32cd32;
     color: black;
     font-weight: bold;
     text-transform: uppercase;
@@ -104,7 +104,7 @@ button {
 }
 
 button:hover {
-    background: rgba(0, 255, 255, 0.8);
+    background: rgba(50, 205, 50, 0.8);
     transform: scale(1.05); /* Slight zoom on hover */
 }
 

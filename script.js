@@ -4,6 +4,24 @@ let symmetry = 8;
 let speedSlider, complexitySlider, colorPicker;
 let shapes = [];
 let audio = document.getElementById("ambientAudio");
+let shapePicker = document.getElementById("shapePicker");
+
+function drawPattern() {
+    let size = map(sin(frameCount * 0.02), -1, 1, 50, 200);
+    
+    switch (shapePicker.value) {
+        case "circle":
+            ellipse(0, size, size, size);
+            break;
+        case "square":
+            rect(-size / 2, size, size, size);
+            break;
+        case "triangle":
+            triangle(-size / 2, size, size / 2, size, 0, -size);
+            break;
+    }
+}
+
 
 document.addEventListener("click", () => {
     if (audio) {

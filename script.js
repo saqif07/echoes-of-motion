@@ -61,7 +61,6 @@ function draw() {
     for (let s of shapes) {
         s.display();
     }
-}
 
 function mouseDragged() {
     let gridSize = 20; // Snap movement to a grid

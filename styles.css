@@ -33,6 +33,19 @@ h1 {
     animation: fadeIn 2s forwards;
 }
 
+/* Author Name */
+#author {
+    font-size: 18px;
+    font-family: 'Orbitron', sans-serif;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    text-shadow: 0px 0px 8px rgba(25, 63, 63, 0.6);
+    margin-top: -10px;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+
 @keyframes fadeIn {
     from {
         opacity: 0;

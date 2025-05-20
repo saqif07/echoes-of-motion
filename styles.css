@@ -3,6 +3,7 @@ body {
     font-family: 'Playfair Display', serif;
     color: white;
     background: linear-gradient(45deg, #101010, #2b2b2b); /* Futuristic dark gradient */
+    backdrop-filter: blur(10px); /* Soft blur for depth */
     margin: 0;
     padding: 0;
     text-align: center;
@@ -16,15 +17,28 @@ body {
     width: 80%;
     max-width: 800px;
     margin: 20px auto;
+    box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5); /* Glowing effect */
 }
 
-/* Title */
+/* Title with Subtle Animation */
 h1 {
     font-family: 'Orbitron', sans-serif;
     text-transform: uppercase;
-    letter-spacing: 2px;
     color: cyan; /* Futuristic glow */
     text-shadow: 0px 0px 10px rgba(0, 255, 255, 0.8);
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Description */
@@ -37,11 +51,15 @@ h1 {
     margin-left: auto;
     margin-right: auto;
     line-height: 1.6;
+    opacity: 0;
+    animation: fadeIn 2s forwards; /* Same animation effect as title */
 }
 
-/* Controls Section */
+/* Controls Section with Glowing Borders */
 #controls {
     background: rgba(255, 255, 255, 0.1);
+    border: 2px solid cyan;
+    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.5); /* Glow effect */
     border-radius: 10px;
     padding: 15px;
     display: inline-block;
@@ -65,12 +83,15 @@ input, select, button {
     cursor: pointer;
 }
 
-/* Canvas */
+/* Canvas with Glowing Border */
 #canvasContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+    border: 2px solid cyan;
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.8); /* Neon glow effect */
+    border-radius: 10px;
 }
 
 /* Buttons */
@@ -79,10 +100,12 @@ button {
     color: black;
     font-weight: bold;
     text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
 }
 
 button:hover {
     background: rgba(0, 255, 255, 0.8);
+    transform: scale(1.05); /* Slight zoom on hover */
 }
 
 /* Audio Player */

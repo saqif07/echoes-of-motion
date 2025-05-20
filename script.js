@@ -15,10 +15,17 @@ function setup() {
 
     audio = document.getElementById("ambientAudio");
 
+    select("#clearCanvas").mousePressed(() => {
+        shapes = []; // Clears stored shapes
+        background(colorPicker.value()); // Resets the canvas color
+    });
+
+
     document.addEventListener("click", () => {
         if (audio) {
             audio.play().catch(error => console.error("Playback error:", error));
         }
+        
     });
 
     document.getElementById("volumeSlider").addEventListener("input", (event) => {
